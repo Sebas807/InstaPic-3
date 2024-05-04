@@ -1,0 +1,45 @@
+.gallery-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+}
+
+.photo-comments {
+    margin-top: 10px;
+    margin-right: 10px; 
+    margin-bottom: 5px; 
+}
+
+.publicar-foto {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #333;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.publicar-foto:hover {
+    background: #333;
+    color: #fff;
+}
+
+.img-fluid {
+    width: 215px; 
+    height: 215px; 
+    margin-right: 10px; 
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}

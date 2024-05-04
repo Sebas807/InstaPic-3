@@ -1,0 +1,18 @@
+<div class="input-container">
+    <div>
+        <div>
+            <input *ngIf="showFileInput" class="form-control" type="file" id="fileInput" (change)="saveImages($event)" accept="image/*">
+            <button class="publicar-foto" *ngIf="!showFileInput" (click)="uploadImages()">Publicar Foto</button>           
+        </div>
+    </div>
+</div>
+<br>
+<div class="gallery-container">
+    <div class="photo-comments" *ngFor="let photo of photos.reverse()">
+        <img [src]="photo.url" class="img-fluid" [alt]="altText">
+        <app-comment [photo]="photo"></app-comment>           
+    </div>
+</div>
+
+
+

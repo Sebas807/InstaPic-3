@@ -1,0 +1,19 @@
+<div class="line"></div>
+<div class="container">        
+    <div class="posts">
+        <h2> Publicaciones </h2>
+            <span class="icon-posts">
+                <i class="bi bi-images"></i>
+            </span>
+    </div>
+    <div *ngIf="showButton" class="gallery">
+        <p>Aún no has subido ninguna foto, ¡Publica una!</p>
+    </div>
+    <div class="upload">
+        <button *ngIf="showButton" class="upload-btn" (click)="navigateToGaleria()">
+            <i class="bi bi-plus"></i> Subir foto</button>
+        <button *ngIf="!showButton" class="upload-btn" (click)="navigateToFeed()">Cancelar</button>
+    </div>
+</div>
+<br>
+<router-outlet></router-outlet>
