@@ -30,7 +30,7 @@
 }
 
 .p-edit {
-    width: 130px;
+    width: auto;
     height: 50px;
     background: transparent;
     border: 2px solid #333;
@@ -43,7 +43,7 @@
     margin-left: 30px;
     transition: .5s;
 }
-  .p-edit:hover {
+.p-edit:hover {
     background: #333;
     color: #fff;
 }

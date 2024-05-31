@@ -8,18 +8,17 @@
                             <i class="bi bi-instagram"></i>
                         </div>
                 </div>
-                <form action="#" class="search-bar">
-                    <input type="text" placeholder="Buscar...">
-                    <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
+                <div class="search-bar">
+                    <button (click)="navigateSearch()" class="btnLogin-popup"><i class="bi bi-search">Buscar personas</i></button>
+                </div>
             </div>
             <div class="col-md-9 col-sm-9 col-9 text-end">
                 <nav class="navigation">
-                    <a href="#"><i class="bi bi-house-door-fill"></i></a>
+                    <a routerLink="/home"><i class="bi bi-house-door-fill"></i></a>
                     <a href="#"><i class="bi bi-chat-dots-fill"></i></a>
                     <a href="#"><i class="bi bi-people-fill"></i></a>
                     <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    <button class="btnLogin-popup">Cerrar Sesión</button>
+                    <button (click)="cerrarSesion()" class="btnLogin-popup">Cerrar Sesión</button>
                 </nav>
             </div>
         </div>

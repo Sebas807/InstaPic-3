@@ -15,12 +15,12 @@ export class FeedComponent {
 
   navigateToGaleria() {
     this.showButton = false;
-    this.router.navigate(['galeria']);
+    this.router.navigate(['/galeria']);
   }
 
   navigateToFeed() {
     this.showButton = true;
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
     this.publicacionesService.setCantidad(0);
   }
 }

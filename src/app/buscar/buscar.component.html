@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div *ngIf="isSearch" class="container">
+    <img class="profile-img" src="assets/messi.jpeg" alt="Messi">
+    <div class="container-profile">
+        <br>
+        <div class="stats" >
+            <p><b>0</b> Publicaciones </p>
+            <p><b>395</b> Amigos </p>
+            <p><b>619</b> Solicitudes </p>
+        </div>
+        <div class="p-info" >
+            <h2>{{ name }}</h2>
+            <p class="p-field"> Tecnología e Ingeniería</p>
+            <p class="p-dev"> Angular y Nest Js</p>
+            <p class="p-dev">Mi cumpleaños es el {{ birthday }}</p>
+            <p class="p-dev">Mi correo de contacto: {{ email }}</p>
+            <p class="p-suscribe">Suscríbete a mi canal</p>
+            <a class="p-link" href="https://www.youtube.com/@UdeMedellin_">UdeMedellin</a>
+        </div>
+        <br>
+        <div class="p-buttons">
+            <button class="p-edit">Enviar solicitud de amistad</button>
+            <button (click)="Volver()" class="p-edit">Volver</button>
+        </div>
+    </div>
+    <div class="u-logo" >
+        <img class="u-img" src="assets/histori.svg" alt="UdeMedellin Logo">            
+    </div>
+</div>
+
+<div *ngIf="!isSearch" class="container">
+    <div class="container-profile">
+        <form [formGroup]="formulario" (ngSubmit)="getUserInfo()">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon2">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text" id="search" formControlName="busqueda" class="form-control" aria-label="Buscar" aria-describedby="basic-addon2">
+                <button type="submit" class="p-edit" [disabled]="formulario.invalid">Buscar</button>
+            </div>
+            <div *ngIf="busqueda && busqueda?.invalid && (busqueda?.dirty || busqueda?.touched)">
+                <div *ngIf="busqueda.errors?.['required']">El nombre es requerido para la búsqueda.</div>
+                <div *ngIf="busqueda.errors?.['pattern']">Los nombres solo pueden contener letras, números, guiones, puntos y guiones bajos.</div>
+                <div *ngIf="busqueda.errors?.['minlength']">Los nombres deben tener al menos 3 caracteres.</div>
+                <div *ngIf="busqueda.errors?.['noEmpiezaConLetra']">Los nombres deben empezar con una letra.</div>
+            </div>
+        </form>
+    </div>
+</div>

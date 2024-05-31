@@ -1,6 +1,6 @@
-<div class="container" >
+<div *ngIf="!isEditing" class="container">
     <img class="profile-img" src="assets/messi.jpeg" alt="Messi">
-    <div class="container-profile" >
+    <div class="container-profile">
         <br>
         <div class="stats" >
             <p><b>{{ cantidadActual }}</b> Publicaciones </p>
@@ -8,20 +8,47 @@
             <p><b>619</b> Solicitudes </p>
         </div>
         <div class="p-info" >
-            <h2>Lionel Andrés Messi</h2>
+            <h2>{{ name }}</h2>
             <p class="p-field"> Tecnología e Ingeniería</p>
-            <p class="p-job" > Creador de videos  </p>
-            <p class="p-dev" > HTML, CSS, JAVASCRIPT</p>
-            <p class="p-suscribe" >Suscríbete a mi canal</p>
+            <p class="p-dev"> Angular y Nest Js</p>
+            <p class="p-dev">Mi cumpleaños es el {{ birthday }}</p>
+            <p class="p-dev">Mi correo de contacto: {{ email }}</p>
+            <p class="p-suscribe">Suscríbete a mi canal</p>
             <a class="p-link" href="https://www.youtube.com/@UdeMedellin_">UdeMedellin</a>
         </div>
         <br>
         <div class="p-buttons" >
-            <button class="p-edit">Editar perfil</button>
+            <button (click)="enableEditing()" class="p-edit">Editar perfil</button>
         </div>
     </div>
+    <div class="u-logo" >
+        <img class="u-img" src="assets/histori.svg" alt="UdeMedellin Logo">            
+    </div>
 </div>
-<br>
-<div class="u-logo" >
-    <img class="u-img" src="assets/histori.svg" alt="UdeMedellin Logo">            
-</div>
+
+<div *ngIf="isEditing" class="container">
+    <div class="container-profile">
+        <h2 class="text-center">Editar mis datos</h2>
+        <br>
+        <form (ngSubmit)="saveUserInfo()">
+            <label class="form-label">
+            Email:
+            <input type="email" [(ngModel)]="email" name="email" required class="form-control">
+            </label>
+            <br>
+            <label class="form-label">
+            Name:
+            <input type="text" [(ngModel)]="name" name="name" required class="form-control">
+            </label>
+            <br>
+            <label class="form-label">
+            Birthday:
+            <input type="date" [(ngModel)]="birthday" name="birthday" required class="form-control">
+            </label>
+            <br>
+            <hr>
+            <button class="p-edit" type="submit">Guardar</button>
+            <button class="p-edit" type="button" (click)="cancelEditing()">Cancelar</button>
+        </form>
+    </div>
+  </div>

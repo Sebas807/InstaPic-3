@@ -1,0 +1,74 @@
+/* Contenedor que centra el formulario en la página */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Ajustar el espacio superior para el formulario */
+  .container {
+    box-shadow: rgba(16, 0, 79, 0.16) 0 0.5rem 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    font-weight: 100;
+    line-height: 1.5;
+    justify-content: center;
+    margin: 2%;
+    width: 90%;
+    max-width: 25rem; /* Máximo ancho del formulario */
+    margin-top: 10%;
+  }
+  
+  /* Estilos para el header */
+  .header {
+    background-color: #000000; /* bg-danger */
+    color: white;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .icon-ig {
+    position: absolute;
+    top: 10%;
+    color: white;
+    left: 250px;
+    font-size: 2.3em;
+  }
+  
+  .logo{
+    font-size: 2em;
+    color: white;
+    user-select: none;
+  }
+  
+  .register {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #333;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .5s;
+  }
+  
+  .register:hover {
+    background: #333;
+    color: #fff;
+  }
+  

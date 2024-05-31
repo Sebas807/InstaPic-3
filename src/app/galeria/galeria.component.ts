@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Photo } from './interfaces/galeria.interface';
 import { PublicacionesService } from './services/publicaciones.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-galeria',
@@ -16,7 +17,9 @@ export class GaleriaComponent {
   photoIdString = '';
   altText = 'Imagen no encontrada'
 
-  constructor(private publicacionesService: PublicacionesService) { }
+  constructor(private publicacionesService: PublicacionesService,
+    private router: Router
+  ) { }
 
   saveImages(event: Event) {
     const inputElement = event.target as HTMLInputElement;
@@ -46,5 +49,9 @@ export class GaleriaComponent {
     else{
       return;
     }
+  }
+
+  Volver() {
+    this.router.navigate(['/home']);
   }
 }

@@ -1,9 +1,12 @@
 <div class="input-container">
-    <div>
+    <div class="espacio-entre-botones">
         <div>
             <input *ngIf="showFileInput" class="form-control" type="file" id="fileInput" (change)="saveImages($event)" accept="image/*">
             <button class="publicar-foto" *ngIf="!showFileInput" (click)="uploadImages()">Publicar Foto</button>           
         </div>
+    </div>
+    <div>
+        <button class="publicar-foto" (click)="Volver()">Volver</button>
     </div>
 </div>
 <br>
